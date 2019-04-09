@@ -1,0 +1,221 @@
+﻿@model Chinmaya.Registration.Models.CenterDetails
+@{
+    ViewBag.Title = "Center Details";
+    Layout = "~/Views/Shared/_LayoutPageRegister.cshtml";
+}
+
+@section Styles {
+
+    <style>
+        .requiredA:after {
+            content: " *";
+            font-weight: bold;
+            color: red;
+        }
+
+        .fa {
+            color: gray;
+        }
+
+        .fas {
+            padding-top: 10px;
+            padding-left: 4px;
+        }
+
+        .input-group-addon {
+            background-color: lightgray;
+            width: 25px;
+        }
+    </style>
+
+}
+
+@section Scripts {
+    <script>
+		$(document).ready(function () {
+			var selectedCountry = "@ViewBag.SelectedCenterCountry";
+
+			$("#Country").change(function () {
+				var id = $(this).val();
+				$("#State").empty();
+				$.get("FillCenterState", { Id: id }, function (data) {
+					var v = "<option>Select State</option>";
+					$.each(data, function (i, v1) {
+						v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#State").html(v);
+				});
+			});
+
+			$("#State").change(function () {
+				var id = $(this).val();
+				$("#City").empty();
+				$.get("FillCenterCity", { Id: id }, function (data) {
+					var v = "<option>Select City</option>";
+					$.each(data, function (i, v1) {
+						v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#City").html(v);
+				});
+			});
+
+			$("#City").change(function () {
+				var id = $(this).val();
+				$("#Center").empty();
+				$.get("FillCenters", { Id: id }, function (data) {
+					var v = "<option>Select Center</option>";
+					$.each(data, function (i, v1) {
+						v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#Center").html(v);
+				});
+			});
+
+			var selectedState = "@ViewBag.SelectedCenterState";
+			if (selectedState != "") {
+				$("#State").empty();
+				$.get("FillCenterState", { Id: selectedCountry }, function (data) {
+					var v = "";
+					$.each(data, function (i, v1) {
+						if (v1.Id == selectedState)
+							v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#State").html(v);
+				});
+			}
+
+			var selectedCity = "@ViewBag.SelectedCenterCity";
+			if (selectedCity != "") {
+				$("#City").empty();
+				$.get("FillCenterCity", { Id: selectedState }, function (data) {
+					var v = "";
+					$.each(data, function (i, v1) {
+						if (v1.Id == selectedCity)
+							v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#City").html(v);
+				});
+			}
+
+			var selectedCenter = "@ViewBag.SelectedCenter";
+			if (selectedCenter != "") {
+				$("#Center").empty();
+				$.get("FillCenters", { Id: selectedCity }, function (data) {
+					var v = "";
+					$.each(data, function (i, v1) {
+						if (v1.Id == selectedCenter)
+						v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#Center").html(v);
+				});
+			}
+
+			$(document).bind('keypress', function (e) {
+				var keyCode = e.keyCode || e.which;
+				if (keyCode === 13) {
+					e.preventDefault();
+					$('.centerDetails').trigger('click');
+				}
+			});
+		});
+    </script>
+}
+
+@using (Html.BeginForm("CenterDetails", "Account", FormMethod.Post))
+
+{
+
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="regi-process-bar">
+                    <div class="row">
+                        <div class="col-md-3"><div class="regi-heading">Center</div></div>
+                        <div class="col-md-9">
+                            <div class="row bs-wizard">
+                                <div class="col-md-3 bs-wizard-step active">
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">1</a>
+                                    <div class="text-center bs-wizard-stepnum marl-55">Center</div>
+                                </div>
+
+                                <div class="col-md-3 bs-wizard-step disabled">
+
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">2</a>
+                                    <div class="text-center bs-wizard-stepnum">Personal</div>
+                                </div>
+
+                                <div class="col-md-3 bs-wizard-step disabled">
+
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">3</a>
+                                    <div class="text-center bs-wizard-stepnum">Contact</div>
+                                </div>
+
+                                <div class="col-md-3 bs-wizard-step disabled">
+
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">4</a>
+                                    <div class="text-center bs-wizard-stepnum marr-60">Account</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.ValidationSummary(true)
+                <div class="regi-main-1">
+                   
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="requiredA">Country</label>
+                            <select  class="form-control" style="height: 35px;" disabled="disabled" style="width:100%"><option>USA</option></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="requiredA">State</label>
+                            <select  class="form-control" style="height: 35px;"  disabled="disabled" style="width:100%"><option>Illinois</option></select>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="requiredA">City</label>
+                            <select  class="form-control" style="height: 35px;" disabled="disabled" style="width:100%"><option>Willowbrook</option></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="requiredA">Center</label>
+                            <select  class="form-control" style="height: 35px;" disabled="disabled" style="width:100%"><option>Badri</option></select>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-secondary float-left" id="btnCancel" type="button" onclick="window.location = 'http://localhost:1989/Registration.aspx'">Cancel <i class="material-icons">cancel</i></button>
+                            <button class="btn btn-orange float-right centerDetails" name="BtnNext" type="submit" data-target="#demo" data-toggle="collapse">Continue <i class="material-icons">check_circle</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+
+    $(document).bind('keyup', function (e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 13) {
+            $('.centerDetails').trigger('click');
+        }
+    });
+</script>
+
+
+
+
+

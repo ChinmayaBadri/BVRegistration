@@ -1,0 +1,10 @@
+﻿@model Chinmaya.Registration.Models.ToastModel
+@{
+    ViewBag.Title = "User Activation";
+    Layout = "~/Views/Shared/_LayoutPageOpen.cshtml";
+}
+
+<div class="row col-lg-12">
+	@Model.Message &nbsp; @Html.ActionLink("Click here", "Login", "Account") &nbsp; to login to your account.
+</div>
+

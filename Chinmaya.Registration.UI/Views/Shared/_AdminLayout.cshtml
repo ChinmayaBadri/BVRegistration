@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - Chinmaya Mission</title>
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/jquery")
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body class="theme_bg">
+	<header class="fixed-top">
+		<div class="header_top" style="padding-bottom:0">
+			<div class="row mb-3">
+				<div class="col-md-2 table-title">
+					<a class="navbar-brand" href="#">
+						<img alt="mainlogo" src="/Content/img/dashboard-logo.png">
+					</a>
+				</div>
+				<div class="col-md-8 table-title text-center">
+					<h5><img src="/Content/img/3.png" /><b> <i style="color:#171e52;letter-spacing:3px">Chinmaya Mission Chicago</i></b></h5>
+					<h6><i style="color:#ff5c00">Badri - A school of Vedantic Studies</i></h6>
+					11S080 Kingery Highway,Willowbrook, IL - 60527 Phone: 630-654-3370
+				</div>
+				<div class="col-md-2 text-right">
+					<a class="navbar-brand" href="#">
+						<img alt="mainlogo" src="/Content/img/1.png">&nbsp;
+						<img alt="mainlogo" src="/Content/img/2.png">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="header_nav">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<button class="navbar-toggler" aria-expanded="false" aria-controls="navbarSupportedContent" aria-label="Toggle navigation" type="button" data-target="#navbarSupportedContent" data-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item"><a rel="noopener noreferrer" class="nav-link" href="/Home/Index">Home<span class="sr-only">(current)</span></a> </li>
+						<li class="nav-item"><a rel="noopener noreferrer" class="nav-link" href="/Home/BalaViharRegistrationForUnregistered">Bala Vihar Registrations</a> </li>
+						<li class="nav-item"><a rel="noopener noreferrer" class="nav-link" href="/Home/DonationForUnregistered">Donate</a> </li>
+						<li class="nav-item"><a rel="noopener noreferrer" class="nav-link" href="/Home/ContactUs">Contact Us</a> </li>
+					</ul>
+					<div class="form-inline my-2 my-lg-0">
+
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item"><a class="nav-link" href="http://localhost:58740/">Sign In</a> </li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<div class="theme_bg page-body-wrapper">
+		<div class="nav-side-menu">
+			<div class="menu-list">
+				<ul class="menu-content collapse out" id="menu-content">
+					<li class="collapsed" aria-expanded="false" data-target="#account" data-toggle="collapse">
+						<a href="javascript: void(0);">
+							Master Data Management<i class="material-icons arrow">
+								keyboard_arrow_up
+							</i>
+						</a>
+					</li>
+					<ul class="sub-menu collapse" id="account">
+						<li>
+							<a href="/Home/Programs">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Programs
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="/Home/Events">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Events
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="/Home/Grades">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Grades
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="/Home/AgeGroups">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Age Groups
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="/Home/Syllabus">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Syllabus
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="/Home/Textbooks">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Textbooks
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="/Home/EnrollmentFees">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Enrolment Fees
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="/Home/Teachers">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Teachers
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Password" href="?Home/Users">
+								<label>
+									<img alt="" src="/Content/img/change-password.png">
+									Users
+								</label>
+							</a>
+						</li>
+					</ul>
+
+
+
+
+					<li class="collapsed" aria-expanded="false" data-target="#contact" data-toggle="collapse">
+						<a href="javascript: void(0);">
+							Center Management<i class="material-icons arrow">
+								keyboard_arrow_up
+							</i>
+						</a>
+					</li>
+					<ul class="sub-menu collapse" id="contact">
+						<li>
+							<a class="Phone">
+								<label>
+									<img alt="" src="/Content/img/update-family-info.png">
+									Age Group Grades
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Email">
+								<label>
+									<img alt="" src="/Content/img/phone.png">
+									Grade Textbooks
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Address">
+								<label>
+									<img alt="" src="/Content/img/past-transations.png">
+									Grade Syllabus
+								</label>
+							</a>
+						</li>
+						<li>
+							<a class="Address" href="/Home/SendMessages">
+								<label>
+									<img alt="" src="img/email.png">
+									Send Messages
+								</label>
+							</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+			</div>
+		@RenderBody()
+	</div>
+
+
+	<footer class="footer">
+		<p>&copy; @DateTime.Now.Year - Chinmaya Mission</p>
+	</footer>
+
+
+	@Scripts.Render("~/bundles/bootstrap")
+	@Scripts.Render("~/bundles/jqueryval")
+	@RenderSection("scripts", required: false)
+</body>
+</html>

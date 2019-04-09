@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/Users/rpalipi/Documents/Chinmaya Mission/Chinmaya.Registration/Chinmaya.Registration.DAL/Chinmaya.Registration.DAL.csproj",
+  "TargetFramework": "v4.6.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+﻿@model Chinmaya.Registration.Models.MainEventModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Event";
+}
+
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+
+<style>
+
+	.requiredA:after {
+		content: " *";
+		font-weight: bold;
+		color: red;
+	}
+	.nav-link-active {
+		color: #f8430c !important;
+	}
+</style>
+
+<button class="navbar-toggler aside-toggle" aria-expanded="false" aria-controls="menu-content" aria-label="Toggle navigation" type="button" data-target="#menu-content" data-toggle="collapse"> <span class="navbar-toggler-icon"></span> </button>
+
+<div class="bd-content">
+    <div class="inner-box">
+        <div class="row mb-3">
+            <div class="col-md-6 table-title">Event Information</div>
+            <div class="col-md-6 text-right">
+                <a class="orange-links" id="AddEvent" href="javascript: void(0);"><i class="far fa-plus-square line-height14"></i> Add Event</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Weekday</th>
+                            <th scope="col">Frequency</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        @foreach (var ev in Model.currentEventModel)
+                        {
+                            <tr>
+                                <td>@ev.Name</td>
+                                <td>@ev.Weekday</td>
+                                <td>@ev.Frequency</td>
+                                <td>$@ev.ChangeAmount</td>
+                                <td id="@ev.Id" class="editEvent"><a href="javascript: void(0);" data-toggle="modal" data-target="#EditEventModal" class="Edit"><span class="label label-orange">Edit</span></a></td>
+                                <td id="@ev.Id" class="deleteEvent"><span class="label label-orange">Delete</span></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+<div class="modal fade bd-example-modal-lg" id="eventModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+ 
+<script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+        $(document).ready(function () {
+            $("#AddEvent").on("click", function () {
+                $('#eventModal').empty('');
+                $.ajax({
+                    "url": "../Event/RefreshEventPartialView",
+                    "type": "GET",
+                    success: function (data) {
+                        $("#eventModal").html(data);
+                        $("#eventModal").modal();
+                    },
+                });
+            });
+
+            var today = new Date();
+            $('.datepicker').datepicker({
+                todayHighlight: true,
+                autoclose: true,
+                useCurrent: true,
+                dateFormat: 'mm/dd/yyyy',
+                startDate: "today",
+                endDate: '+10y'
+            });
+
+            $(".editEvent").click(function () {
+                $('#eventModal').empty('');
+                var id = $(this).attr("id");
+                $.ajax({
+                    "url": "../Event/EditEvent/" + id,
+                    "type": "GET",
+                    success: function (data) {
+                        $("#eventModal").html(data);
+                        $("#eventModal").modal();
+                    },
+                });
+            });
+
+            $(".deleteEvent").click(function () {
+                var id = $(this).attr("id");
+                $.ajax({
+                    "url": "../Event/DeleteEvent/" + id,
+                    "type": "GET",
+                    success: function (msg) {
+                        var content = msg;
+                        $.confirm({
+                            title: 'Alert!',
+                            content: content,
+                            buttons: {
+                                confirm: {
+                                    text: 'Okay',
+                                    btnClass: 'btn-blue',
+                                    keys: ['enter', 'shift'],
+                                    action: function () {
+                                        var url = '@Url.Action("Event", "Event")';
+                                        window.location.href = url;
+                                    }
+                                }
+                            }
+                        });
+                    },
+                });
+            });
+
+        });
+
+        $(function () {
+            $('.modal').on('hidden.bs.modal', function (e) {
+                $(this)
+                    .find("input:text, input:password, input:hidden, select, textarea")
+                    .val('');
+                $("input[type=date]").val("");
+
+                $(this)
+                    .find(".field-validation-error")
+                    .html('');
+            });
+        });
+</script>
+
+<script>
+	//$("#current-Events").click(function () {
+			//$(this).removeClass("nav-link").addClass('nav-link-active');
+	//});
+</script>

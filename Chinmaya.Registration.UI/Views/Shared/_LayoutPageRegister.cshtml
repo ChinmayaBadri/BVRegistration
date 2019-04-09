@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+
+	@Styles.Render("~/Content/css")
+	@RenderSection("Styles", false)
+
+	@Scripts.Render("~/bundles/jquery")
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body class="theme_bg">
+    <header class="regi-header">
+
+        <div class="container-fluid">
+            <a href="javascript: void(0);"><img alt="mainlogo" src="~/Content/img/dashboard-logo.png"></a>
+            <div style="width:68px; float:right; margin:0px; margin-top:-1px;"><img style="border-radius:50%; border:2px solid #c7b299;" src="~/Content/img/header-thumbnail.png"></div>
+        </div>
+    </header>
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", false)
+</body>
+</html>

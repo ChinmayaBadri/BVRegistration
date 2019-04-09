@@ -1,0 +1,130 @@
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\csc.exe
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\System.Collections.Immutable.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\System.Reflection.Metadata.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\vbc.exe
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\VBCSCompiler.exe
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\VBCSCompiler.exe.config
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.BAL.dll.config
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.BAL.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.BAL.pdb
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Antlr3.Runtime.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\AutoMapper.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.DAL.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Models.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Utilities.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Microsoft.Web.Infrastructure.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Newtonsoft.Json.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Net.Http.Formatting.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.ValueTuple.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Helpers.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.WebHost.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Mvc.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Optimization.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Razor.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Deployment.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Razor.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\WebGrease.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.SqlServer.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.DAL.pdb
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.DAL.dll.config
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Models.pdb
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Utilities.pdb
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Antlr3.Runtime.pdb
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\AutoMapper.pdb
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\AutoMapper.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.ValueTuple.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Helpers.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Mvc.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Optimization.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Razor.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Deployment.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Razor.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Newtonsoft.Json.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Net.Http.Formatting.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.WebHost.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.SqlServer.xml
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.Registration.BAL.csprojResolveAssemblyReference.cache
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.Registration.BAL.csproj.CoreCompileInputs.cache
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.Registration.BAL.csproj.CopyComplete
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.BAL.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.BAL.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\csc.exe
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\System.Collections.Immutable.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\System.Reflection.Metadata.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\vbc.exe
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\VBCSCompiler.exe
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\roslyn\VBCSCompiler.exe.config
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.BAL.dll.config
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.BAL.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.BAL.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Antlr3.Runtime.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\AutoMapper.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.DAL.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Models.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Utilities.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Microsoft.Web.Infrastructure.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Newtonsoft.Json.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Net.Http.Formatting.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.ValueTuple.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Helpers.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.WebHost.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Mvc.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Optimization.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Razor.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Deployment.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Razor.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\WebGrease.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.SqlServer.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.DAL.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.DAL.dll.config
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Models.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Chinmaya.Utilities.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Antlr3.Runtime.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\AutoMapper.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\AutoMapper.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.ValueTuple.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Helpers.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Mvc.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Optimization.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Razor.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Deployment.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.WebPages.Razor.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\Newtonsoft.Json.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Net.Http.Formatting.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\System.Web.Http.WebHost.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\EntityFramework.SqlServer.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.Registration.BAL.csprojResolveAssemblyReference.cache
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.Registration.BAL.csproj.CoreCompileInputs.cache
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.Registration.BAL.csproj.CopyComplete
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.BAL.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\obj\Release\Chinmaya.BAL.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\log4net.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.BAL\bin\log4net.xml

@@ -1,0 +1,359 @@
+﻿using Chinmaya.Registration.Models;
+using Chinmaya.Registration.Utilities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+using Chinmaya.Registration.UI.Services;
+using Chinmaya.Registration.UI.Providers;
+
+namespace Chinmaya.Registration.UI.Controllers
+{
+	[CustomAuthorize(Roles = "User")]
+	public class EventRegistrationController : BaseController
+    {
+        UserService _user = new UserService();
+        EventService _event = new EventService();
+
+        /// <summary>
+        /// get events
+        /// </summary>
+        /// <param name="age"> user age </param>
+        /// <returns> List of current events </returns>
+        public async Task<List<CurrentEventModel>> GetEvents(int age)
+        {
+            HttpResponseMessage roleResponseMessage = await Utility.GetObject("/api/Event/GetEventsData/" + age, true);
+            return await Utility.DeserializeObject<List<CurrentEventModel>>(roleResponseMessage);
+        }
+
+        /// <summary>
+        /// subscribe events to the users
+        /// </summary>
+        /// <param name="select"> selected events id's in list of string </param>
+        /// <param name="prevBtn"> back button name </param>
+        /// <param name="nextBtn"> next button name </param>
+        /// <returns> Program Event Registration view or My account view or classes confirm view </returns>
+        [AllowAnonymous]
+        public async Task<ActionResult> ProgramEventRegistration(string[] select, string[] timeoption, string[] weekdayoption, string prevBtn, string nextBtn)
+        {
+            ProgramEventRegistrationModel programEventRegistrationModel = new ProgramEventRegistrationModel();
+            programEventRegistrationModel.uFamilyMembers = await _user.GetUserFamilyMemberData(User.UserId);
+            foreach (var item in programEventRegistrationModel.uFamilyMembers)
+            {
+                DateTime today = DateTime.Today;
+                int age = today.Year - (item.DOB).Year;
+                item.Events = await GetEvents(age);
+                foreach (var i in item.Events)
+                {
+                    //i.Stime = Converttime24to12(i.StartTime);
+                    //i.Etime = Converttime24to12(i.EndTime);
+                    List<multipleConvertedTimings> listmct = new List<multipleConvertedTimings>();
+                    foreach (var tm in i.multimings)
+                    {
+                        multipleConvertedTimings mct = new multipleConvertedTimings();
+                        mct.Stime = Converttime24to12(tm.StartTime);
+                        mct.Etime = Converttime24to12(tm.EndTime);
+                        listmct.Add(mct);
+                    }
+                    i.multimingsConverted = listmct;
+                    i.ChangeAmount = (int)i.Amount;
+                }
+
+            }
+            if (prevBtn != null)
+            {
+                return RedirectToAction("MyAccount", "Account");
+            }
+
+            else
+            {
+                if (nextBtn != null)
+                {
+                    List<ClassesConfirmModel> classesConfirm = new List<ClassesConfirmModel>();
+                    if (select == null)
+                    {
+                        return View("ClassesConfirm", classesConfirm);
+                    }
+                    else
+                    if (select.Length != 0)
+                    {
+                        List<string> selectedId = new List<string>();
+                        List<List<string>> selectedEventId = new List<List<string>>();
+
+                        for (int i = 0; i < select.Length; i++)
+                        {
+                            var arr = select[i].Split('_');
+                            var ar1 = arr[0];
+                            var ar2 = arr[1];
+                            selectedId.Add(ar2);
+                        }
+                        List<string> userIds = selectedId.Distinct().ToList();
+                        List<string> testList = new List<string>();
+                        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+                        foreach (var item in userIds)
+                        {
+
+                            for (int i = 0; i < select.Length; i++)
+                            {
+                                var arr = select[i].Split('_');
+                                var ar1 = arr[0];
+                                var ar2 = arr[1];
+                                if (ar2 == item)
+                                {
+
+                                    testList.Add(ar1);
+
+                                }
+                            }
+                            dict.Add(item, new List<string>(testList));
+                            testList.Clear();
+                        }
+
+                        foreach (KeyValuePair<string, List<string>> entry in dict)
+                        {
+                            var userData = await _user.GetUserData(entry.Key);
+                            List<CurrentEventModel> currentEvents = new List<CurrentEventModel>();
+                            foreach (var ev in entry.Value)
+                            {
+                                var eventData = await _event.GetEventData(ev);
+								//eventData.Stime = Converttime24to12(eventData.StartTime);
+								//eventData.Etime = Converttime24to12(eventData.EndTime);
+								//List<multipleConvertedTimings> listmct1 = new List<multipleConvertedTimings>();
+								//foreach (var tm1 in eventData.multimings)
+								//{
+								//	multipleConvertedTimings mct = new multipleConvertedTimings();
+								//	mct.Stime = Converttime24to12(tm1.StartTime);
+								//	mct.Etime = Converttime24to12(tm1.EndTime);
+								//	listmct1.Add(mct);
+								//}
+								//eventData.multimingsConverted = listmct1;
+								//eventData.Weekday = weekdayoption[i];
+								eventData.ChangeAmount = (int)eventData.Amount;
+                                currentEvents.Add(eventData);
+                            }
+
+							//TempData["SelectedTime"] = timeoption;
+							//ViewBag.SelectedTime = timeoption;
+							//TempData["SelectedWeekday"] = weekdayoption;
+							//ViewBag.SelectedWeekday = weekdayoption;
+
+							ClassesConfirmModel classConfirm = new ClassesConfirmModel();
+                            classConfirm.uFamilyMembers = userData;
+                            classConfirm.Events = currentEvents;
+                            classesConfirm.Add(classConfirm); 
+
+							decimal amount = 0;
+                            foreach (var item in classesConfirm)
+                            {
+                                foreach (var ev in item.Events)
+                                {
+                                    amount += (decimal)ev.Amount;									
+                                }
+                            }
+                            SessionVar.Amount = amount;
+                            ViewBag.Amount = amount;
+                        }
+						int k = 0;
+						foreach (var item in classesConfirm)
+						{
+							foreach (var ev in item.Events)
+							{
+								ev.Weekday = weekdayoption[k];
+								ev.time = timeoption[k];
+								k++;
+							}
+						}
+						SessionVar.rgstclasses = classesConfirm;
+                        //TempData["mydata"] = classesConfirm;
+                        return View("ClassesConfirm", classesConfirm);
+                    }
+
+                    else return View("ProgramEventRegistration", programEventRegistrationModel);
+
+                }
+            }
+            return View("ProgramEventRegistration", programEventRegistrationModel);
+        }
+
+        /// <summary>
+        /// Converts 24 Hour Time Format to 12 Hour Time Format
+        /// </summary>
+        /// <param name="tm"></param>
+        /// <returns>12 Hour Time Format string</returns>
+        public string Converttime24to12(TimeSpan tm)
+		{
+			string result = "";
+			var hours = tm.Hours;
+			var minutes = tm.Minutes;
+			var amPmDesignator = "am";
+			if (hours == 0)
+				hours = 12;
+			else if (hours == 12)
+				amPmDesignator = "pm";
+			else if (hours > 12)
+			{
+				hours -= 12;
+				amPmDesignator = "pm";
+			}
+			result = String.Format("{0}:{1:00} {2}", hours, minutes, amPmDesignator);
+			return result;
+		}
+
+        /// <summary>
+        /// display selected events with users
+        /// </summary>
+        /// <param name="prevBtn"></param>
+        /// <param name="nextBtn"></param>
+        /// <returns> payment method view or Program Event Registration view or Classes Confirm view </returns>
+        [AllowAnonymous]
+        public ActionResult ClassesConfirm(string[] select, string prevBtn, string nextBtn)
+        {
+            if (prevBtn != null)
+            {
+                return RedirectToAction("ProgramEventRegistration");
+            }
+
+            else
+            {
+                List<ClassesConfirmModel> classesConfirm = new List<ClassesConfirmModel>();
+                classesConfirm = SessionVar.rgstclasses as List<ClassesConfirmModel>;
+                if (nextBtn != null)
+                {
+                    //List<ClassesConfirmModel> classesConfirm = new List<ClassesConfirmModel>();
+                    //if (select == null)
+                    //{
+                    //	//TempData["msg"] = "<script>alert('Please select at least one Event');</script>";
+                    //	ViewBag.msg = "Please select at least one Event";
+                    //	return View("ClassesConfirm");
+                    //	//return RedirectToAction("ProgramEventRegistration");
+                    //}
+                    //else
+                    //if (select.Length != 0)
+                    //{
+                    //	List<string> selectedId = new List<string>();
+                    //	List<List<string>> selectedEventId = new List<List<string>>();
+
+                    //	for (int i = 0; i < select.Length; i++)
+                    //	{
+                    //		var arr = select[i].Split('_');
+                    //		var ar1 = arr[0];
+                    //		var ar2 = arr[1];
+                    //		selectedId.Add(ar2);
+                    //	}
+                    //	List<string> userIds = selectedId.Distinct().ToList();
+                    //	List<string> testList = new List<string>();
+                    //	Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+                    //	foreach (var item in userIds)
+                    //	{
+
+                    //		for (int i = 0; i < select.Length; i++)
+                    //		{
+                    //			var arr = select[i].Split('_');
+                    //			var ar1 = arr[0];
+                    //			var ar2 = arr[1];
+                    //			if (ar2 == item)
+                    //			{
+
+                    //				testList.Add(ar1);
+
+                    //			}
+                    //		}
+                    //		dict.Add(item, new List<string>(testList));
+                    //		testList.Clear();
+                    //	}
+
+                    //	foreach (KeyValuePair<string, List<string>> entry in dict)
+                    //	{
+                    //		var userData = await _user.GetUserData(entry.Key);
+                    //		List<CurrentEventModel> currentEvents = new List<CurrentEventModel>();
+                    //		foreach (var ev in entry.Value)
+                    //		{
+                    //			var eventData = await _event.GetEventData(ev);
+                    //			//eventData.Stime = Converttime24to12(eventData.StartTime);
+                    //			//eventData.Etime = Converttime24to12(eventData.EndTime);
+                    //			eventData.ChangeAmount = (int)eventData.Amount;
+                    //			currentEvents.Add(eventData);
+                    //		}
+
+                    //		ClassesConfirmModel classConfirm = new ClassesConfirmModel();
+                    //		classConfirm.uFamilyMembers = userData;
+                    //		classConfirm.Events = currentEvents;
+                    //		classesConfirm.Add(classConfirm);
+                    //	}
+                    //	decimal amount = 0;
+                    //	foreach (var item in classesConfirm)
+                    //	{
+                    //		foreach (var ev in item.Events)
+                    //		{
+                    //			amount += (decimal)ev.Amount;
+                    //		}
+                    //	}
+                    //	ViewBag.SelectedTime = TempData["SelectedTime"];
+                    //	ViewBag.SelectedWeekday = TempData["SelectedWeekday"];
+                    //	var termCheckBox = Request.Form["termsandConditions"];
+                    //	var dir = Request.Form["Directory"];
+                    //	if (termCheckBox != "on")
+                    //	{
+                    //		//TempData["msg"] = "<script>alert('Please agree to the terms and conditions');</script>";
+                    //		ViewBag.msg = "Please agree to the terms and conditions";
+                    //		return View("ClassesConfirm", classesConfirm);
+                    //	}
+
+                    //	TempData["Amount"] = amount;
+                    //	TempData["mydata"] = classesConfirm;
+                    //	return RedirectToAction("PaymentMethod", "Payment");
+                    //}
+
+                    //return View("ClassesConfirm", classesConfirm);
+                    var termCheckBox = Request.Form["termsandConditions"];
+                    var dir = Request.Form["Directory"];
+                    if (termCheckBox != "on")
+                    {
+                        ViewBag.msg = "Please agree to the terms and conditions";
+						ViewBag.Amount = SessionVar.Amount;
+						return View("ClassesConfirm", classesConfirm);
+                    }
+                    //decimal amount = 0;
+                    //foreach (var item in classesConfirm)
+                    //{
+                    //    foreach (var ev in item.Events)
+                    //    {
+                    //        amount += (decimal)ev.Amount;
+                    //    }
+                    //}
+                    //TempData["Amount"] = amount;
+                    ViewBag.Amount = SessionVar.Amount;
+                    TempData["mydata"] = classesConfirm;
+                    return RedirectToAction("PaymentMethod", "Payment");
+                }
+            }
+            return View("ClassesConfirm");
+        }
+
+        /// <summary>
+        /// Adds current user to the chinmaya directory
+        /// </summary>
+        /// <param name="Id"> current user id </param>
+        /// <returns> Json string </returns>
+        [AllowAnonymous]
+        public async Task<ActionResult> AddtoDirectory(string Id)
+        {
+            var id = User.UserId;
+            HttpResponseMessage userResponseMessage = await Utility.GetObject("/api/Event/AddtoDirectory/" + id, Id, true);
+            string res = "Okay";
+            return Json(res, JsonRequestBehavior.AllowGet);
+        }
+
+		[HttpGet]
+		[AllowAnonymous]
+		public PartialViewResult TeacherInfo(string id)
+		{
+			//TeacherInfo ti = new TeacherInfo();
+			ViewBag.Teacherdetails = id;
+			return PartialView("_TeacherInfo");
+		}
+	}
+}

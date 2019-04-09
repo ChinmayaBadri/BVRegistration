@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Chinmaya.Registration.Models.TeacherModel>
+
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Teacher";
+}
+
+<button class="navbar-toggler aside-toggle" aria-expanded="false" aria-controls="menu-content" aria-label="Toggle navigation" type="button" data-target="#menu-content" data-toggle="collapse"> <span class="navbar-toggler-icon"></span> </button>
+
+<div class="bd-content">
+	<div class="inner-box">
+		<div class="row mb-3">
+			<div class="col-md-6 table-title">Teacher Information</div>
+			<div class="col-md-6 text-right">
+				<a class="orange-links" id="AddTeacher" href="javascript: void(0);"><i class="far fa-plus-square line-height14"></i> Add Teacher</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Class</th>
+							<th scope="col">Email</th>
+							<th scope="col">Address</th>
+							<th scope="col">Phone</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+					<tr>
+						<td><a href="javascript: void(0);" data-toggle="popover" data-content="@item.TeacherDetails">@item.FullName</a></td>
+						<td>@item.Class</td>
+						<td>@item.Email</td>
+						<td>@item.Address</td>
+						<td>@item.HomePhone</td>
+						@*<td id="@item.Id" class="editEvent"><a href="javascript: void(0);" data-toggle="modal" data-target="#EditEventModal" class="Edit"><span class="label label-orange">Edit</span></a></td>
+						<td id="@item.Id" class="deleteEvent"><span class="label label-orange">Delete</span></td>*@
+					</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+
+<div class="modal fade bd-example-modal-lg" id="teacherModal" tabindex="-1" role="dialog" aria-hidden="true"></div>
+<script>
+	$(document).ready(function () {
+		$('[data-toggle="popover"]').popover();
+		$("#AddTeacher").click(function () {
+			window.open('/Account/PersonalDetails' + '?RoleId = 3', '_blank');
+		});
+	});
+</script>

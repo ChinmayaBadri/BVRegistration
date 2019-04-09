@@ -1,0 +1,112 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_Layoutnew.cshtml";
+	ViewBag.Title = "DonationForUnregistered";
+}
+
+<style>
+	.field-validation-error {
+		color: red;
+	}
+</style>
+
+<div class="bd-content">
+	<h3 class="bd-title">Donation Form - Chinmaya Mission Chicago</h3>
+		<div class="inner-box" style="background-color: antiquewhite">
+			<div class="row mb-3">
+				<div class="col-md-6">
+					Please select the Donation type:
+					@Html.DropDownList("Donation", new SelectList(ViewBag.Options as System.Collections.IEnumerable, "Text", "Value"),
+				   "Donation Type", new { @class = "form-control" })
+				</div>
+			</div>
+			<p style="font-weight: bold">Patron Information:</p>
+			<hr />
+			<div class="row mb-3">
+				<div class="col-md-6">
+					*Last Name<br />
+					@Html.TextBox("Last Name", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-6">
+					*First Name (Father & Mother)<br />
+					@Html.TextBox("First Name", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-12">
+					*Address<br />
+					@Html.TextBox("Address", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-4">
+					*City<br />
+					@Html.TextBox("City", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-4">
+					*State<br />
+					@Html.TextBox("State", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-4">
+					*zip/Postal code<br />
+					@Html.TextBox("zip/Postal code", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-4">
+					*Country<br />
+					@Html.TextBox("Country", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-4">
+					*Home Phone<br />
+					@Html.TextBox("Home Phone", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-4">
+					Cell Phone<br />
+					@Html.TextBox("Cell Phone", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-6">
+					*Email<br />
+					@Html.TextBox("Email", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-6" style="font-weight: bold">
+					Amount of Donation: $
+					<br />
+					@Html.TextBox("Amount of Donation", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<p>If paying by Check or Cash, please select appropriately:</p>
+			<p class="col-md-4">
+				@Html.RadioButton("Payment", "Paying by Check") <text style="font-weight:bold">Paying by Check</text>
+				@Html.RadioButton("Payment", "Paying by Cash") <text style="font-weight:bold">Paying by Cash</text>
+			</p>
+			<p class="field-validation-error">
+				(If neither is selected you will be taken to the Credit card payment page via PayPal.)
+				</p>
+				<div class="row mb-3">
+					<div class="col-md-12">
+						Comments<br />
+						@Html.TextBox("Comments", null, new { @class = "form-control" })
+					</div>
+				</div>
+				<hr />
+				<button class="btn btn-orange float-left" type="submit">Donate<i class="material-icons">check_circle</i></button>
+				<br /><br /><br />
+<p>
+				*Required fields<br />
+				If paying by check, please mail the check payable to "Chinmaya Mission Chicago" to the following address:<br />
+				(You can also drop the cash or check off at the book store on Sundays at the Mission. Make sure to specify in the memo field online donation or specific details.)<br />
+			</p>
+			<p style="font-weight: bold">
+				Chinmaya Mission Chicago<br />
+				PO Box 5375<br />
+				Oak Brook<br />
+				IL 60522-5375
+			</p>
+		</div>
+	</div>
+

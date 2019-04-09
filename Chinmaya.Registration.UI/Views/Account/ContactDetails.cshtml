@@ -1,0 +1,205 @@
+﻿@model Chinmaya.Registration.Models.ContactDetails
+@{
+    ViewBag.Title = "Contact Details";
+    Layout = "~/Views/Shared/_LayoutPageRegister.cshtml";
+}
+
+@section Styles {
+    <style>
+        .requiredA:after {
+            content: " *";
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+		$(document).ready(function () {
+			var selectedCountry = "@ViewBag.SelectedCountry";
+			var selectedState = "@ViewBag.SelectedState";
+
+			if (selectedCountry == 231 && selectedState == "") {
+				var id = 231;
+				$.get("FillCenterState", { Id: id }, function (data) {
+					var v = "<option>Select State</option>";
+					$.each(data, function (i, v1) {
+						v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#State").html(v);
+				});
+			}
+
+			$("#Country").change(function () {
+				var id = $(this).val();
+				$("#State").empty();
+				$.get("FillCenterState", { Id: id }, function (data) {
+					var v = "<option>Select State</option>";
+					$.each(data, function (i, v1) {
+						v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#State").html(v);
+				});
+			});
+
+			if (selectedState != "") {
+				$("#State").empty();
+				$.get("FillCenterState", { Id: selectedCountry }, function (data) {
+					var v = "";
+					$.each(data, function (i, v1) {
+						if (v1.Id == selectedState)
+							v += "<option value=" + v1.Id + ">" + v1.Name + "</option>";
+					});
+					$("#State").html(v);
+				});
+			}
+
+			$(document).bind('keypress', function (e) {
+				var keyCode = e.keyCode || e.which;
+				if (keyCode === 13) {
+					e.preventDefault();
+					$('.contactDetails').trigger('click');
+				}
+			});
+		});
+    </script>
+}
+@using (Html.BeginForm("ContactDetails", "Account", FormMethod.Post))
+
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="regi-process-bar">
+                    <div class="row">
+                        <div class="col-md-5"><div class="regi-heading">Contact Details</div></div>
+                        <div class="col-md-7">
+                            <div class="row bs-wizard">
+                                <div class="col-md-3 bs-wizard-step complete">
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">1</a>
+                                    <div class="text-center bs-wizard-stepnum marl-55">Center</div>
+                                </div>
+
+                                <div class="col-md-3 bs-wizard-step complete">
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">2</a>
+                                    <div class="text-center bs-wizard-stepnum marl-55">Personal</div>
+                                </div>
+
+                                <div class="col-md-3 bs-wizard-step active">
+
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">3</a>
+                                    <div class="text-center bs-wizard-stepnum">Contact</div>
+                                </div>
+
+                                <div class="col-md-3 bs-wizard-step disabled">
+
+                                    <div class="progress"><div class="progress-bar"></div></div>
+                                    <a class="bs-wizard-dot" href="javascript: void(0);">4</a>
+                                    <div class="text-center bs-wizard-stepnum marr-60">Account</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @Html.ValidationSummary(true)
+                <div class="regi-main-1">
+                    <p>
+                        <span class="red-txt">*</span> Denotes a required field
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.LabelFor(m => m.Address, new { @class = "requiredA" })
+                            @Html.TextBoxFor(m => m.Address, new { @class = "form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                        </div>
+               
+                        <div class="col-md-6 form-group">
+                            <label class="requiredA">State</label>
+                            <select class="form-control" style="height: 35px;" disabled="true">
+                                <option>Illinois</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--<div class="col-md-6">
+                            @Html.LabelFor(m => m.State, new { @class = "requiredA" })
+                            @Html.DropDownList("State", new SelectList(Enumerable.Empty<SelectListItem>(), "Id", "Name", ViewBag.SelectedState), "Select State", new { @class = "form-control", @style = "height: 35px;" })
+                            @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
+                        </div>-->
+                        <div class="col-md-6">
+                            @Html.LabelFor(m => m.City, new { @class = "requiredA" })
+                            @Html.TextBoxFor(m => m.City, new { @class = "form-control", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            @Html.LabelFor(m => m.ZipCode, new { @class = "requiredA" })
+                            @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", maxlength = "5", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.ZipCode, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            @Html.LabelFor(m => m.HomePhone, new { @class = "requiredA" })
+                            @Html.TextBoxFor(m => m.HomePhone, new { @class = "form-control", maxlength = "10", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.HomePhone, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            @Html.LabelFor(m => m.CellPhone)
+                            @Html.TextBoxFor(m => m.CellPhone, new { @class = "form-control", maxlength = "10", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.CellPhone, "", new { @class = "text-danger" })
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-secondary float-left" name="prevBtn" type="submit">Back @*<i class="material-icons">cancel</i>*@<i class="fas fa-arrow-alt-circle-left"></i></button>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-8">
+                            By creating an account you will be eligible to receive information about our programs and events.
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-orange float-right contactDetails" name="nextBtn" type="submit" data-target="#demo" data-toggle="collapse">Create Account <i class="material-icons">check_circle</i></button>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-8">
+                            By registering only, you will be eligible only for the selected Bala Vihar class. However, we will store the registration details to confirm your participation.
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-success float-right contactDetails" name="nextBtn2" type="submit" data-target="#demo" data-toggle="collapse">Register Only <i class="material-icons">check_circle</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            }
+            <script>
+                $(document).ready(function () {
+                    $("#ZipCode, #HomePhone, #CellPhone").keypress(function (e) {
+                        var keyCode = e.which;
+                        if ((keyCode != 8 || keyCode == 32) && (keyCode < 48 || keyCode > 57)) {
+                            return false;
+                        }
+                        //if ($("#ZipCode").val.length > 5) {
+                        //	alert($("#ZipCode").val.length);
+                        //	$("#ZipCode").val = $("#ZipCode").val;
+                        //	//return false;
+                        //}
+                    });
+
+                });
+
+            </script>
+

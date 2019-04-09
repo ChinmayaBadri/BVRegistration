@@ -1,0 +1,237 @@
+﻿
+@{
+	Layout = "~/Views/Shared/_Layoutnew.cshtml";
+	ViewBag.Title = "BalaViharRegistrationForUnregistered";
+}
+
+<style>
+	.field-validation-error {
+		color: red;
+	}
+</style>
+<div class="bd-content">
+	<h3 class="bd-title">2018-2019 Bala Vihar Registration Form</h3>
+	<div class="inner-box" style="background-color:aliceblue">
+		<p style="font-weight:bold">
+			Fees: $275/- for 1 child (or) $450/- for 2 siblings (or) $525/- for 3 or more siblings<br />
+			(Fees doesn't cover books & supplies. Please buy the books from the book store and pay directly at the time of purchase.)<br />
+		</p>
+		<a href="javascript: void(0);">Click Here to check your child Bala Vihar registration status </a><br /><br />
+
+		<p class="field-validation-error">
+			Combined Bala Vihar Session for Summer on Sundays (9:30 AM - 11:30 AM)<br />
+			(June 10th, 2018 to August 26th, 2018)
+		</p>
+
+		<p class="field-validation-error">Note for New Parents - Once you register for 2018-2019 Bala Vihar year and if your child is 4+ years old you can bring your child immediately to the Bala Vihar classes.<br /></p> <br />
+		<div class="inner-box" style="background-color:antiquewhite">
+			<p style="font-weight:bold">Parent Information:</p>
+			<div class="row mb-3">
+				<div class="col-md-6">
+					*Last Name<br />
+					@Html.TextBox("Last Name", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-6">
+					*First Name (Father & Mother)<br />
+					@Html.TextBox("First Name", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-12">
+					*Address<br />
+					@Html.TextBox("Address", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-4">
+					*City<br />
+					@Html.TextBox("City", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-4">
+					*State<br />
+					@Html.TextBox("State", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-4">
+					*zip<br />
+					@Html.TextBox("Zip", null, new { @class = "form-control" })
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-6">
+					Emergency Contact<br />
+					@Html.TextBox("Emergency Contact", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-6">
+					Emergency Number<br />
+					@Html.TextBox("Emergency Number", null, new { @class = "form-control" })
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-4">
+					*Home Phone<br />
+					@Html.TextBox("Home Phone", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-4">
+					Father Work Phone<br />
+					@Html.TextBox("Father Work Phone", null, new { @class = "form-control" })
+				</div>
+				<div class="col-md-4">
+					Mother Work Phone<br />
+					@Html.TextBox("Mother Work Phone", null, new { @class = "form-control" })
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-12">
+					*Father email <text class="field-validation-error">(PLEASE ENTER ONLY ONE EMAIL ADDRESS)</text> <br />
+					@Html.TextBox("Father email", null, new { @class = "form-control" })
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-md-12">
+					*Mother email <text class="field-validation-error">(PLEASE ENTER ONLY ONE EMAIL ADDRESS)</text><br />
+					@Html.TextBox("Mother email", null, new { @class = "form-control" })
+				</div>
+			</div>
+
+			<p style="font-weight:bold">Please Choose a Session:<br /></p>
+            <div class="col-md-12">
+                @Html.RadioButton("Session", "Session1")&nbsp;<text style="font-weight:bold">Session 1</text> Sundays - (9:00 - 11:00 AM)  <br />
+                @Html.RadioButton("Session", "Session2")&nbsp;<text style="font-weight:bold">Session 2</text> Sundays - (1:00 PM - 3:00 PM) <br />
+                @Html.RadioButton("Session", "Session3")&nbsp;<text style="font-weight:bold">Session 3 </text>Saturday SessionSaturdays - (9:00 AM - 11:00 AM) <br /><br />
+            </div>
+			<p class="field-validation-error">
+				(Strictly Enforced!) - All children must be 4 year old! <br />
+				If you register a child who is not 4 at the time of registration you should wait until the child turns 4.<br />
+				In other words, registering in to Bala Vihar program doesn't mean they can attend the classes immediately.
+				</p>
+
+				<hr />
+				<p style="font-weight:bold">Please choose a payment method:</p>
+
+				<p class="col-md-4">
+					@Html.RadioButton("Payment", "Paying by Check") <text style="font-weight:bold">Paying by Check</text>
+					@Html.RadioButton("Payment", "Paying by Cash") <text style="font-weight:bold">Paying by Cash</text>
+					@Html.RadioButton("Payment", "Paying by CC") <text style="font-weight:bold">Paying by CC</text>
+				</p>
+				<p class="field-validation-error">(For paying by CC option, you will be taken to the credit card payment page via PayPal.)</p>
+				<hr />
+				<p style="font-weight:bold">Student Information Child 1:</p>
+
+				<p>
+					Please Enter all Children information below<br />
+					(Strictly Enforced!) - All children must be 4 year old by September 1, 2019 <br />
+					If you register a child who is not 4 at the time of registration you should wait until the child turns 4.<br />
+					In other words, registering into Bala Vihar program doesn't mean they can attend the classes immediately.
+				</p>
+
+				<div class="row mb-3">
+					<div class="col-md-6">
+						*First Name<br />
+						@Html.TextBox("First Name", null, new { @class = "form-control" })
+					</div>
+					<div class="col-md-6">
+						*Last Name<br />
+						@Html.TextBox("Last Name", null, new { @class = "form-control" })
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="col-md-4">
+						*Date of Birth (MM/DD/YYYY)<br />
+						@Html.TextBox("Date of Birth", null, new { @class = "form-control" })
+					</div>
+					<div class="col-md-4">
+						*Grade (As of Fall 2018)<br />
+						@Html.TextBox("Grade", null, new { @class = "form-control" })
+					</div>
+                    <div class="col-md-4">
+                        Gender*<br />
+                        @Html.RadioButton("Gender1", "Male")&nbsp;Male
+                        @Html.RadioButton("Gender1", "Female")&nbsp;Female
+                    </div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-md-12">
+						Comments<br />
+						@Html.TextBox("Comments", null, new { @class = "form-control" })
+					</div>
+				</div>
+				<hr />
+
+				<p style="font-weight:bold">Student Information Child 2:<br /></p>
+				<div class="row mb-3">
+					<div class="col-md-6">
+						*First Name<br />
+						@Html.TextBox("First Name", null, new { @class = "form-control" })
+					</div>
+					<div class="col-md-6">
+						*Last Name<br />
+						@Html.TextBox("Last Name", null, new { @class = "form-control" })
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="col-md-4">
+						*Date of Birth (MM/DD/YYYY)<br />
+						@Html.TextBox("Date of Birth", null, new { @class = "form-control" })
+					</div>
+					<div class="col-md-4">
+						*Grade (As of Fall 2018)<br />
+						@Html.TextBox("Grade", null, new { @class = "form-control" })
+					</div>
+                    <div class="col-md-4">
+                        Gender*<br />
+                        @Html.RadioButton("Gender2", "Male")&nbsp;Male
+                        @Html.RadioButton("Gender2", "Female")&nbsp;Female
+                    </div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-md-12">
+						Comments<br />
+						@Html.TextBox("Comments", null, new { @class = "form-control" })
+					</div>
+				</div>
+				<hr />
+
+				<p style="font-weight:bold">Student Information Child 3:<br /></p>
+				<div class="row mb-3">
+					<div class="col-md-6">
+						*First Name<br />
+						@Html.TextBox("First Name", null, new { @class = "form-control" })
+					</div>
+					<div class="col-md-6">
+						*Last Name<br />
+						@Html.TextBox("Last Name", null, new { @class = "form-control" })
+					</div>
+				</div>
+
+				<div class="row mb-3">
+					<div class="col-md-4">
+						*Date of Birth (MM/DD/YYYY)<br />
+						@Html.TextBox("Date of Birth ", null, new { @class = "form-control" })
+					</div>
+					<div class="col-md-4">
+						*Grade (As of Fall 2018)<br />
+						@Html.TextBox("Grade", null, new { @class = "form-control" })
+					</div>
+                    <div class="col-md-4">
+                        Gender*<br />
+                        @Html.RadioButton("Gender3", "Male")&nbsp;Male
+                        @Html.RadioButton("Gender3", "Female")&nbsp;Female
+                    </div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-md-12">
+						Comments<br />
+						@Html.TextBox("Comments", null, new { @class = "form-control" })
+					</div>
+				</div>
+				<hr />
+				<button class="btn btn-orange float-left" type="submit">Submit<i class="material-icons">check_circle</i></button>
+</div>
+	</div>
+</div>
+

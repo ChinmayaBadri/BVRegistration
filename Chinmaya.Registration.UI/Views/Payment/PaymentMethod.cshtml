@@ -1,0 +1,221 @@
+﻿@model Chinmaya.Registration.Models.CheckPaymentModel
+@{
+    Layout = "~/Views/Shared/_LayoutForProgramEventRegistration.cshtml";
+    ViewBag.Title = "Payment Method";
+}
+
+<style>
+    .requiredA:after {
+        content: " *";
+        font-weight: bold;
+        color: red;
+    }
+</style>
+
+<button class="navbar-toggler aside-toggle" aria-expanded="false" aria-controls="menu-content" aria-label="Toggle navigation" type="button" data-target="#menu-content" data-toggle="collapse"> <span class="navbar-toggler-icon"></span> </button>
+
+<div class="bd-content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="regi-process-bar mt-0">
+				<div class="row">
+					<div class="col-md-5"><div class="regi-heading">Register for Classes and Activities</div></div>
+					<div class="col-md-7">
+						<div class="row bs-wizard">
+							<div class="col-md-4 bs-wizard-step complete">
+								<div class="progress"><div class="progress-bar"></div></div>
+								<a class="bs-wizard-dot" href="javascript: void(0);">1</a>
+								<div class="text-center bs-wizard-stepnum marl-55">Register</div>
+							</div>
+
+							<div class="col-md-4 bs-wizard-step complete">
+								<!-- complete -->
+								<div class="progress"><div class="progress-bar"></div></div>
+								<a class="bs-wizard-dot" href="javascript: void(0);">2</a>
+								<div class="text-center bs-wizard-stepnum">Confirm</div>
+							</div>
+
+							<div class="col-md-4 bs-wizard-step active">
+								<!-- active -->
+								<div class="progress"><div class="progress-bar"></div></div>
+								<a class="bs-wizard-dot" href="javascript: void(0);">3</a>
+								<div class="text-center bs-wizard-stepnum marr-60">Pay</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@using (Html.BeginForm("PaymentMethod", "Payment", FormMethod.Post))
+	{
+		@Html.AntiForgeryToken()
+		@Html.ValidationSummary(true)
+		<div class="row">
+			<div class="col-md-12">
+				<div class="regi-main-1">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="regi-heading mt-0 mb-3">Payment Method</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								@Html.RadioButtonFor(m => m.paymentType, "Check", new { id = "CheckPaymentMethod" })<span> Check</span>
+							</label>
+						</div>
+						<div class="form-check-inline">
+							<label class="form-check-label">
+								@Html.RadioButtonFor(m => m.paymentType, "PayPal", new { id = "CreditPaymentMethod" })<span> PayPal</span>
+							</label>
+						</div>
+					</div>
+					<br />
+
+					<div class="paymentMethodCheck" id="paymentMethodCheck">
+						<p><br /><span class="red-txt">*</span> Denotes a required field</p>
+						<div class="row">
+							<div class="col-md-6">
+								@Html.LabelFor(m => m.AccountHolderName, new { @class = "requiredA" })
+								@Html.TextBoxFor(m => m.AccountHolderName, new { @class = "form-control", autocomplete = "off" })
+								@Html.ValidationMessageFor(m => m.AccountHolderName, "", new { @class = "text-danger" })
+							</div>
+							<div class="col-md-6">
+								@Html.LabelFor(m => m.AccountTypeId, new { @class = "requiredA" })
+								@Html.DropDownList("AccountTypeId", new SelectList(ViewBag.AccountType, "Id", "Name"), "Select", new { @class = "form-control", @style = "height: 35px;" })
+								@Html.ValidationMessageFor(m => m.AccountTypeId, "", new { @class = "text-danger" })
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								@Html.LabelFor(m => m.BankName, new { @class = "requiredA" })
+								@Html.TextBoxFor(m => m.BankName, new { @class = "form-control", autocomplete = "off" })
+								@Html.ValidationMessageFor(m => m.BankName, "", new { @class = "text-danger" })
+							</div>
+							<div class="col-md-6">
+								@Html.LabelFor(m => m.AccountNumber, new { @class = "requiredA" })
+								@Html.TextBoxFor(m => m.AccountNumber, new { @class = "form-control", autocomplete = "off" })
+								@Html.ValidationMessageFor(m => m.AccountNumber, "", new { @class = "text-danger" })
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								@Html.LabelFor(m => m.RoutingNumber, new { @class = "requiredA" })
+								@Html.TextBoxFor(m => m.RoutingNumber, new { @class = "form-control", autocomplete = "off" })
+								@Html.ValidationMessageFor(m => m.RoutingNumber, "", new { @class = "text-danger" })
+							</div>
+							<div class="col-md-6 form-group">
+								@Html.LabelFor(m => m.ConfirmAccountNumber, new { @class = "requiredA" })
+								@Html.TextBoxFor(m => m.ConfirmAccountNumber, new { @class = "form-control", autocomplete = "off" })
+								@Html.ValidationMessageFor(m => m.ConfirmAccountNumber, "", new { @class = "text-danger" })
+							</div>
+						</div>
+					</div>
+
+					<div class="paymentMethodPaypal" id="paymentMethodPaypal">
+						<br />
+						<img src="~/Content/img/paypal.png" alt="PayPal Payment" />
+						<br /><br />
+						<p>
+							<b>
+								(You will be directed to the paypal payment page. Please follow the instructions to pay using your paypal account or directly by using your CC. You don't need to create a paypal account or use your paypal account if you have one.)
+							</b>
+							<br><br />
+							Please choose "Pay with a debit or credit card, or Bill Me Later" option in the next paypal screen, if you don't have paypal account or decided not to use your paypal account.<br>
+							Make sure once you pay successfully by CC through paypal, please click on "Return to Chinmaya Mission Chicago" button.  This will automatically register your successful payment in our database.<br>
+						</p>
+						<br />
+						<button class="btn btn-orange" id="paymentSubmitPaypal" name="nextBtn" type="button">Pay using PayPal</button>
+						<br /><br />
+					</div>
+					<br />
+					<div class="row">
+						<div class="col-md-12">
+							<button class="btn btn-secondary mr-2" name="prevBtn" type="submit">Back</button>
+							<button class="btn btn-orange" id="paymentSubmit" name="nextBtn" type="submit" data-target="#demo" @*onclick="javascript:return showlert();"*@ data-toggle="collapse">Submit</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	}
+</div>
+<!-- Latest compiled and minified JavaScript -->
+<script>
+		$(document).ready(function () {
+			$("#paymentMethodCheck").hide();
+			$("#paymentMethodPaypal").hide();
+			//$("#paymentSubmit").prop("disabled", true);
+			$("#paymentMethodCheck")
+				.find(".field-validation-error")
+				.html('');
+		});
+		$("#CheckPaymentMethod").on("change", function () {
+				var paymentMethod = $(this).val();
+			if (paymentMethod == "Check") {
+				$("#paymentMethodPaypal").hide();
+					$("#paymentMethodCheck")
+						.find(".field-validation-error")
+						.html('');
+					$("#paymentMethodCheck").show();
+					//$("#paymentSubmit").prop("disabled", false);
+				}
+				else
+				{
+				$("#paymentMethodCheck").hide();
+				$("#paymentMethodPaypal").show();
+					$("#paymentMethodCheck")
+						.find(".field-validation-error")
+						.html('');
+				}
+			});
+		$("#CreditPaymentMethod").on("change", function () {
+				var paymentMethod = $(this).val();
+				if (paymentMethod) {
+					$("#paymentMethodCheck").hide();
+					$("#paymentMethodPaypal").show();
+					@*var url = '@Url.Action("PaypalPaymentMethod", "Payment")';
+                        window.location.href = url;*@
+				}
+		});
+
+		$("#paymentSubmitPaypal").on("click", function () {
+        window.open("https://www.paypal.com/in/signin", "_blank");
+		});
+
+		@*$("#paymentBack").on("click", function () {
+			var url = '@Url.Action("PaymentMethod", "Payment")';
+                        window.location.href = url;
+		});*@
+
+    function showlert() {
+        //var content = "Your payment details will now be saved. The payment will be processed subject to check realization.";
+        //alert(content);
+    }
+
+
+</script>
+
+@if (ViewBag.Message != null)
+{
+    <script>
+        var content = "@ViewBag.Message";
+        $.confirm({
+            title: 'Check Payment Confirmation',
+            content: content,
+            buttons: {
+                confirm: {
+                    text: 'Okay',
+                    btnClass: 'btn-blue',
+                    keys: ['enter', 'shift'],
+                    action: function () {
+                        var url = '@Url.Action("MyAccount", "Account")';
+                        window.location.href = url;
+                    }
+                }
+            }
+        });
+    </script>
+}

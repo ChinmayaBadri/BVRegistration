@@ -1,0 +1,45 @@
+﻿@model System.Data.DataTable
+@using System.Data;
+@{
+	ViewBag.Title = "Events";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="bd-content">
+	<h3 class="bd-title">Events</h3>
+	<div class="inner-box">
+		<div class="row mb-3">
+			<div class="col-md-6 table-title">Event Information</div>
+			<div class="col-md-6 text-right">
+				<a class="orange-links" id="AddFamilyMember" href="javascript: void(0);"><i class="far fa-plus-square line-height14"></i>Add Event</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							@foreach (DataColumn col in Model.Columns)
+							{
+								<th>@col.ColumnName</th>
+							}
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (DataRow row in Model.Rows)
+						{
+							<tr>
+								@foreach (DataColumn col in Model.Columns)
+								{
+									<td>@row[col.ColumnName]</td>
+								}
+								<td><a href="javascript: void(0);" class="Edit"><span class="label label-orange">Edit</span></a></td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+

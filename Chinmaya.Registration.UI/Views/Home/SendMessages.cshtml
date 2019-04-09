@@ -1,0 +1,63 @@
+﻿
+@{
+	ViewBag.Title = "SendMessages";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="Scripts/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>
+        tinymce.init({
+            menubar: false,
+            selector: '#messagebody',
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor textcolor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table paste code help wordcount',
+                'image code'
+            ],
+            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | image code | help'
+        });
+</script>
+<div class="bd-content">
+	<h3 class="bd-title">Send Messages</h3>
+	<div class="inner-box">
+		<div class="row mb-3">
+			<div class="col-md-6 table-title">Message Information</div>
+			<div class="col-md-6 text-right">
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				To:&nbsp;@Html.DropDownList("Contacts", new SelectList(ViewBag.Users as System.Collections.IEnumerable, "Text", "Value"), new { @class = "form-control" })
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-6">
+				CC:&nbsp;@Html.DropDownList("Contacts", new SelectList(ViewBag.Users1 as System.Collections.IEnumerable, "Text", "Value"), new { @class = "form-control" })
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-12">
+				Subject:&nbsp;@Html.TextBox("Subject", null, new { @class = "form-control" })
+			</div>
+		</div>
+		<br />
+		<div class="row">
+			<div class="col-md-12">
+				<textarea id="messagebody" style="width: 100%">Hari Om!</textarea>
+			</div>
+		</div>
+
+		<br />
+		<div class="row">
+			<div class="col-md-12 text-right">
+				<button class="btn btn-orange float-left" type="submit">Send<i class="material-icons">check_circle</i></button>
+
+			</div>
+		</div>
+	</div>
+
+</div>

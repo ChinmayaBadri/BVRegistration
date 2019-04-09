@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_LayoutPageRegistration.cshtml";
+}
+
+
+<div class="login_heading">
+    Bala Vihar Registration
+</div>
+<div class="info_msg">
+    Thank you for your interest in Chinmaya Mission! You will receive a confirmation Email. Please click on the link to confirm your Email address. You will be redirected to the home screen in few seconds.
+</div>
+
+<script>
+    window.setTimeout(function () {
+        location.href = "http://localhost:1989/Home.aspx";
+    }, 10000);
+</script>

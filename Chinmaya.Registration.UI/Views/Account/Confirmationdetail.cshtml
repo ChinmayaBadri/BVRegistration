@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_LayoutPageRegistration.cshtml";
+}
+
+
+<div class="login_heading">
+    Bala Vihar Registration
+</div>
+<div class="info_msg">
+    Thank you for your interest in Chinmaya Mission! You will be redirected to the registration form screen in 5 seconds.
+</div>
+
+<script>
+    window.setTimeout(function () {
+        location.href = "http://localhost:58740/Home/BalaViharRegistrationForUnregistered";
+    }, 5000);
+</script>

@@ -1,0 +1,19 @@
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\Chinmaya.Utilities.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\Chinmaya.Utilities.pdb
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\Newtonsoft.Json.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Registration.Utilities.csprojResolveAssemblyReference.cache
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Registration.Utilities.csproj.CoreCompileInputs.cache
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Registration.Utilities.csproj.CopyComplete
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Utilities.dll
+E:\Backup - Chinmaya\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Utilities.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\Chinmaya.Utilities.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\Chinmaya.Utilities.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\Newtonsoft.Json.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Registration.Utilities.csprojResolveAssemblyReference.cache
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Registration.Utilities.csproj.CoreCompileInputs.cache
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Registration.Utilities.csproj.CopyComplete
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Utilities.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\obj\Release\Chinmaya.Utilities.pdb
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\log4net.dll
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\log4net.xml
+E:\Chinmaya-26112018\Projects\Chinmaya\Chinmaya.Registration\Chinmaya.Registration.Utilities\bin\Release\Newtonsoft.Json.xml
